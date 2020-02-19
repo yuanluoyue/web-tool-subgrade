@@ -5,9 +5,15 @@ const concat = require('gulp-concat')
 
 gulp.task('tidy-js', done => {
     gulp.src('./src/*.js')
-        .pipe(babel())
-        .pipe(concat('main.js'))
+        .pipe(babel({ 
+            presets: ['@babel/env']       
+      }))
+        // // .pipe(concat('main.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('./dist'))
     done()
+})
+
+gulp.task('watch', () => {
+    gulp.watch('./src/*.js', gulp.series(['tidy-js']))
 })
