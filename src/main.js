@@ -4,13 +4,14 @@
         constructor() {
             this.layer = null
             this.topBar = null
+            this.container = null
         }
 
         createSubgrade() {
             let layer = this.createLayer()
             let topBar = this.createTopBar(layer)
             this.createDragHandle(topBar)
-            
+            this.createContainer(layer)
         }
 
         createLayer() {
@@ -80,15 +81,23 @@
 
         createContainer(layer) {
             const container = document.createElement('div')
-            container.style.height = 50 + 'px'
+            container.style.height = 300 + 'px'
             container.style.width = 100 + '%'
-            container.style.backgroundColor = 'rgba(23, 124, 176, 0.6)'
+            // container.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
             this.container = container
             layer.appendChild(container)
         }
 
         getLayer() {
             return this.layer
+        }
+
+        getContainer() {
+            return this.container
+        }
+
+        addTemplateToContainer(templateStr) {
+            this.container.innerHTML = templateStr
         }
 
         setLayerBackgroundColor(backgroundColor) {
