@@ -10,6 +10,7 @@
             let layer = this.createLayer()
             let topBar = this.createTopBar(layer)
             this.createDragHandle(topBar)
+            
         }
 
         createLayer() {
@@ -75,6 +76,15 @@
             this.topBar = topBar
             layer.appendChild(topBar)
             return topBar
+        }
+
+        createContainer(layer) {
+            const container = document.createElement('div')
+            container.style.height = 50 + 'px'
+            container.style.width = 100 + '%'
+            container.style.backgroundColor = 'rgba(23, 124, 176, 0.6)'
+            this.container = container
+            layer.appendChild(container)
         }
 
         getLayer() {
