@@ -1,0 +1,1 @@
+"use strict";window._wtgl_={},console.log("123");
