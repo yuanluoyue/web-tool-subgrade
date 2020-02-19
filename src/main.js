@@ -7,6 +7,7 @@
 
         createSubgrade() {
             let layer = this.createLayer()
+            this.createTopBar(layer)
             this.createDragHandle(layer)
         }
 
@@ -65,6 +66,13 @@
             })
         }
 
+        createTopBar(layer) {
+            
+        }
+
+        getLayer() {
+            return this.layer
+        }
     }
 
     window._wts = new GuiController()

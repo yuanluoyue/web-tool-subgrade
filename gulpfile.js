@@ -8,7 +8,7 @@ gulp.task('tidy-js', done => {
         .pipe(babel({ 
             presets: ['@babel/env']       
       }))
-        // // .pipe(concat('main.js'))
+        .pipe(concat('wts.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist'))
     done()
