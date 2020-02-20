@@ -1,3 +1,6 @@
+import { moveIcon } from './iconString'
+    // console.log(moveIcon)
+    ;
 (() => {
     class GuiController {
 
@@ -35,11 +38,14 @@
 
         createDragHandle(topBar) {
             const d = document.createElement('div')
-            d.innerText = '《☸》'
+            // d.innerText = '《☸》'
+            d.style.backgroundImage = `url(${moveIcon})`
             d.style.display = 'block'
             d.style.float = 'right'
             d.style.cursor = 'move'
             d.style.color = 'red'
+            d.style.height = 50 + 'px'
+            d.style.width = 50 + 'px'
             topBar.appendChild(d)
 
             let dragging = false
