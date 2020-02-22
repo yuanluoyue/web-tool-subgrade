@@ -34,6 +34,11 @@ export const loadStyle = () => {
             width: 50px;
         }
 
+        ._wts-title {
+            padding: 5px;
+            line-height: 40px;
+        }
+
         ._wts-container {
 
         }

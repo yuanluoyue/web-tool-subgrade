@@ -9,6 +9,7 @@ const dataKey = '_%&wts(+*{__'
             this.layer = null
             this.topBar = null
             this.container = null
+            this.title = null
         }
 
         createSubgrade() {
@@ -16,6 +17,7 @@ const dataKey = '_%&wts(+*{__'
             let topBar = this.createTopBar(layer)
             loadStyle()
             this.createDragHandle(topBar)
+            this.createTitle(topBar)
             this.createContainer(layer)
         }
 
@@ -29,7 +31,7 @@ const dataKey = '_%&wts(+*{__'
 
         createDragHandle(topBar) {
             const d = document.createElement('div')
-            
+
             d.classList.add('_wts-drag-handle')
             topBar.appendChild(d)
 
@@ -54,10 +56,14 @@ const dataKey = '_%&wts(+*{__'
                     let moveX = e.clientX - tLeft
                     let moveY = e.clientY - tTop
 
-                    this.layer.style.left = moveX + 'px'
-                    this.layer.style.top = moveY + 'px'
+                    this.setLayerPosition(moveX, moveY)
                 }
             })
+        }
+
+        setLayerPosition(left, top) {
+            this.layer.style.left = left + 'px'
+            this.layer.style.top = top + 'px'
         }
 
         createTopBar(layer) {
@@ -66,6 +72,13 @@ const dataKey = '_%&wts(+*{__'
             this.topBar = topBar
             layer.appendChild(topBar)
             return topBar
+        }
+
+        createTitle(topBar) {
+            const d = document.createElement('div')
+            d.innerText = '科学家控制台'
+            d.classList.add('_wts-title')
+            topBar.appendChild(d)
         }
 
         createContainer(layer) {
@@ -89,6 +102,10 @@ const dataKey = '_%&wts(+*{__'
 
         setLayerBackgroundColor(backgroundColor) {
             this.layer.style.backgroundColor = backgroundColor
+        }
+
+        setTitle(title) {
+            this.title.innerText = title
         }
 
     }
