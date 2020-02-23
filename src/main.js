@@ -1,5 +1,12 @@
 import { loadStyle } from './style'
+
 const dataKey = '_%&wts(+*{__'
+const baseDataStruct = {
+    position: {
+        left: 60,
+        top: 60
+    }
+}
 
     ;
 (() => {
@@ -10,9 +17,29 @@ const dataKey = '_%&wts(+*{__'
             this.topBar = null
             this.container = null
             this.title = null
+            this.dataRecord = null
         }
 
+        // 初始化数据记录
+        initDataRecord() {
+            let d = localStorage.getItem(dataKey)
+            if (d !== null) {
+                // console.log('成功读取存档')
+                this.dataRecord = JSON.parse(d)
+            } else {
+                // console.log('木有存档')
+                this.dataRecord = JSON.parse(JSON.stringify(baseDataStruct))
+            }
+        }
+
+        // 把要储存的数据记录到浏览器缓存
+        saveData() {
+            localStorage.setItem(dataKey, JSON.stringify(this.dataRecord))
+        }
+
+        // 初始化整个 ui
         createSubgrade() {
+            this.initDataRecord()
             let layer = this.createLayer()
             let topBar = this.createTopBar(layer)
             loadStyle()
@@ -23,15 +50,16 @@ const dataKey = '_%&wts(+*{__'
 
         createLayer() {
             const layer = document.createElement('div')
+            const position = this.dataRecord.position
             layer.classList.add('_wts-floor')
             document.body.appendChild(layer)
             this.layer = layer
+            this.setLayerPosition(position.left, position.top)
             return layer
         }
 
         createDragHandle(topBar) {
             const d = document.createElement('div')
-
             d.classList.add('_wts-drag-handle')
             topBar.appendChild(d)
 
@@ -49,13 +77,15 @@ const dataKey = '_%&wts(+*{__'
 
             d.addEventListener('mouseup', (e) => {
                 dragging = false
+                this.saveData()
             })
 
             d.addEventListener('mousemove', (e) => {
                 if (dragging) {
                     let moveX = e.clientX - tLeft
                     let moveY = e.clientY - tTop
-
+                    this.dataRecord.position.left = moveX
+                    this.dataRecord.position.top = moveY
                     this.setLayerPosition(moveX, moveY)
                 }
             })

@@ -9,8 +9,6 @@ export const loadStyle = () => {
             padding: 0;
             margin: 0;
             z-index: 99999;
-            top: 60px;
-            left: 60px;
             background-color: rgba(255, 255, 255, 0.8);
             border: 2px solid gray;
             max-width: 500px;
