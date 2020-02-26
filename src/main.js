@@ -45,6 +45,7 @@ const baseDataStruct = {
             loadStyle()
             this.createDragHandle(topBar)
             this.createTitle(topBar)
+            this.createHiddenEmoji(topBar)
             this.createContainer(layer)
         }
 
@@ -108,6 +109,15 @@ const baseDataStruct = {
             const d = document.createElement('div')
             d.innerText = '科学家控制台'
             d.classList.add('_wts-title')
+            topBar.appendChild(d)
+        }
+
+        createHiddenEmoji(topBar) {
+            const d = document.createElement('div')
+            d.innerText = '(⊙﹏⊙)'
+            d.classList.add('_wts-emoji')
+
+            '(x﹏x)'
             topBar.appendChild(d)
         }
 

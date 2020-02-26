@@ -9,14 +9,16 @@ export const loadStyle = () => {
             padding: 0;
             margin: 0;
             z-index: 99999;
+            overflow: hidden;
             background-color: rgba(255, 255, 255, 0.8);
             border: 2px solid gray;
             max-width: 500px;
-            min-width: 200px;
+            min-width: 250px;
             min-height: 200px;
         }
 
         ._wts-top-bar {
+            padding: 6px;
             height: 50px;
             width: 100%;
             background-color: rgba(23, 124, 176, 0.6);
@@ -35,8 +37,16 @@ export const loadStyle = () => {
         }
 
         ._wts-title {
+            display: inline-block;
             padding: 5px;
             line-height: 40px;
+        }
+
+        ._wts-emoji {
+            display: inline-block;
+            margin-left: 20px;
+            cursor: pointer;
+            font-weight:900;
         }
 
         ._wts-container {
