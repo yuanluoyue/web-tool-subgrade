@@ -25,6 +25,8 @@ export const loadStyle = () => {
 
         ._wts-drag-handle {
             background-image: url(${moveIcon});
+            background-position: center;
+            background-size: 80%;
             display: block;
             float: right;
             cursor: move;
