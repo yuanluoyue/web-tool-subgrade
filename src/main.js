@@ -133,15 +133,17 @@ const baseDataStruct = {
         }
 
         setHiddenEmoji(isHiddenContainer) {
-            if (isHiddenContainer) {
-                this.hiddenEmoji.innerText = '( X﹏X )'
-            } else {
-                this.hiddenEmoji.innerText = '(⊙﹏⊙)'
+            const e = this.hiddenEmoji
+            isHiddenContainer ? e.innerText = '( X﹏X )' : e.innerText = '(⊙﹏⊙)'
+            if (this.container) {
+                this.container.style.display = isHiddenContainer ? 'none' : 'block'
             }
         }
 
         createContainer(layer) {
             const container = document.createElement('div')
+            const isHid = this.dataRecord.isHiddenContainer
+            container.style.display = isHid ? 'none' : 'block'
             container.classList.add('_wts-container')
             this.container = container
             layer.appendChild(container)

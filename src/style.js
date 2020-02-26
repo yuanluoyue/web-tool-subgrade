@@ -14,7 +14,6 @@ export const loadStyle = () => {
             border: 2px solid gray;
             max-width: 500px;
             min-width: 250px;
-            min-height: 200px;
         }
 
         ._wts-top-bar {
@@ -51,7 +50,7 @@ export const loadStyle = () => {
         }
 
         ._wts-container {
-
+            height: 200px;
         }
     `
     document.head.appendChild(styleDom)
