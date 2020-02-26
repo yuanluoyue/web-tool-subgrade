@@ -1,11 +1,13 @@
 import { loadStyle } from './style'
 
 const dataKey = '_%&wts(+*{__'
+
 const baseDataStruct = {
     position: {
         left: 60,
         top: 60
-    }
+    },
+    isHiddenContainer: false
 }
 
     ;
@@ -18,6 +20,7 @@ const baseDataStruct = {
             this.container = null
             this.title = null
             this.dataRecord = null
+            this.hiddenEmoji = null
         }
 
         // 初始化数据记录
@@ -114,11 +117,27 @@ const baseDataStruct = {
 
         createHiddenEmoji(topBar) {
             const d = document.createElement('div')
-            d.innerText = '(⊙﹏⊙)'
             d.classList.add('_wts-emoji')
 
-            '(x﹏x)'
             topBar.appendChild(d)
+            this.hiddenEmoji = d
+
+            this.setHiddenEmoji(this.dataRecord.isHiddenContainer)
+
+            d.onclick = () => {
+                let isHid = this.dataRecord.isHiddenContainer
+                this.dataRecord.isHiddenContainer = !isHid
+                this.setHiddenEmoji(!isHid)
+                this.saveData()
+            }
+        }
+
+        setHiddenEmoji(isHiddenContainer) {
+            if (isHiddenContainer) {
+                this.hiddenEmoji.innerText = '( X﹏X )'
+            } else {
+                this.hiddenEmoji.innerText = '(⊙﹏⊙)'
+            }
         }
 
         createContainer(layer) {

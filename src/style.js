@@ -46,7 +46,8 @@ export const loadStyle = () => {
             display: inline-block;
             margin-left: 20px;
             cursor: pointer;
-            font-weight:900;
+            font-size: 20px;
+            font-weight: 900;
         }
 
         ._wts-container {
