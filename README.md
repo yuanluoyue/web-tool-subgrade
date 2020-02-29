@@ -2,7 +2,8 @@
 + 给 web 工具、外挂或者脚本加个 gui
 
 ## 图片示例
-+ 
++ ![gif](./exp1.gif)
++ ![png](./exp2.png)
 
 ## 项目目录
 + ./src 源码
@@ -14,6 +15,24 @@
 + 然后 _wts.getLayer() 就能获取到这个 dom，在上面插入需要的 ui 即可
 
 ## api
++ 创建窗口 
+    + _wts.createSubgrade()
+
++ 获取放置 dom 的层
+    + _wts.getContainer()
+    ``` javascript
+    // 获取到 lyaer 后对 layer 进行一些 dom 操作即可
+    const layer = _wts.getContainer()
+
+    layer.appendChild(xxx)
+    ```
+
++ 设置标题
+    + _wts.setTitle('你的标题')
+
++ 设置背景色
+    + _wts.setLayerBackgroundColor(css支持的颜色属性)
+
 
 ## 如何修改和构建源码
 + 首先在命令行中进入到这个项目的目录， 执行 npm install
