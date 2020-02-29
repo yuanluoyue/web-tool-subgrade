@@ -27,7 +27,7 @@ export const loadStyle = () => {
         ._wts-drag-handle {
             background-image: url(${moveIcon});
             background-position: center;
-            background-size: 80%;
+            background-size: 90%;
             display: block;
             float: right;
             cursor: move;
@@ -51,6 +51,7 @@ export const loadStyle = () => {
 
         ._wts-container {
             min-height: 200px;
+            max-height: 800px;
         }
     `
     document.head.appendChild(styleDom)
