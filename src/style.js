@@ -50,7 +50,7 @@ export const loadStyle = () => {
         }
 
         ._wts-container {
-            height: 200px;
+            min-height: 200px;
         }
     `
     document.head.appendChild(styleDom)
