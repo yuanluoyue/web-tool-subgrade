@@ -34,6 +34,10 @@
     + _wts.setLayerBackgroundColor(css支持的颜色属性)
 
 
+## 示例项目
++ 猫国仓库管理员
+    + https://gitee.com/jiankesword/kittens-game-resource-administration
+
 ## 如何修改和构建源码
 + 首先在命令行中进入到这个项目的目录， 执行 npm install
 + 等依赖下载完成后， 就能修改 ./src 项目下面的源码了
