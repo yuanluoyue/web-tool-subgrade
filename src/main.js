@@ -95,11 +95,13 @@ const baseDataStruct = {
             })
         }
 
+        // 设置底层 ui 位置
         setLayerPosition(left, top) {
             this.layer.style.left = left + 'px'
             this.layer.style.top = top + 'px'
         }
 
+        // 创建顶部栏
         createTopBar(layer) {
             const topBar = document.createElement('div')
             topBar.classList.add('_wts-top-bar')
@@ -108,10 +110,12 @@ const baseDataStruct = {
             return topBar
         }
 
+        // 创建标题
         createTitle(topBar) {
             const d = document.createElement('div')
             d.innerText = '科学家控制台'
             d.classList.add('_wts-title')
+            this.title = d
             topBar.appendChild(d)
         }
 
