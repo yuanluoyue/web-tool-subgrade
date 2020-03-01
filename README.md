@@ -17,6 +17,10 @@
 ## api
 + 创建窗口 
     + _wts.createSubgrade()
+    + 这里可传入一个独立的 key 用于标识这个项目的窗口状态
+    ```javascript
+    _wts.createSubgrade('my_project')
+    ```
 
 + 获取放置 dom 的层
     + _wts.getContainer()
@@ -58,3 +62,5 @@
     + 增加隐藏内容功能
 + 2020.02.29
     + 修复不能标题和样式 bug
++ 2020.03.01
+    + 创建窗口时可以传入一个值作为该项目独立标识，可以避免被其它项目影响

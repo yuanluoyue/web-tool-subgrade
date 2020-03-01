@@ -1,6 +1,6 @@
 import { loadStyle } from './style'
 
-const dataKey = '_%&wts(+*{__'
+let dataKey = '_%&wts(+*{__'
 
 const baseDataStruct = {
     position: {
@@ -41,7 +41,10 @@ const baseDataStruct = {
         }
 
         // 初始化整个 ui
-        createSubgrade() {
+        createSubgrade(ownKey) {
+            if (ownKey) {
+                dataKey += ownKey
+            }
             this.initDataRecord()
             let layer = this.createLayer()
             let topBar = this.createTopBar(layer)
